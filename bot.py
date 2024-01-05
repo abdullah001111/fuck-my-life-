@@ -53,6 +53,7 @@ plugin_dicts: Dict[str, Dict[str, MangaClient]] = {
         "MangaHasu": MangaHasuClient(),
         "MangaBuddy": MangaBuddyClient(),
         "AsuraScans": AsuraScansClient(),
+        "Manhwa18": Manhwa18Client(),
         "NineManga": NineMangaClient(),
     },
     "🇪🇸 ES": {
