@@ -14,4 +14,5 @@ from .mangatigre import MangatigreClient
 from .mangahasu import MangaHasuClient
 from .mangabuddy import MangaBuddyClient
 from .asurascans import AsuraScansClient
+from .manhwa18 import Manhwa18Client
 from .ninemanga import NineMangaClient
