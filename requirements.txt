@@ -1,5 +1,5 @@
 aiohttp~=3.9.0b1
-Pyrogram~=2.0.97
+Pyrogram~=2.0.106
 beautifulsoup4~=4.8.0
 Pillow~=10.1.0
 tgcrypto
