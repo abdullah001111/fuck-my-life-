@@ -15,8 +15,8 @@ from img2cbz.core import fld2cbz
 from img2pdf.core import fld2pdf, fld2thumb
 from img2tph.core import img2tph
 from plugins import MangaClient, ManhuaKoClient, MangaCard, MangaChapter, ManhuaPlusClient, TMOClient, MangaDexClient, \
-    MangasInClient, McReaderClient, MangaKakalotClient, ManganeloClient, ManganatoClient, \
-    KissMangaClient, MangatigreClient, MangaHasuClient, MangaBuddyClient, AsuraScansClient, Manhwa18Client, NineMangaClient
+    MangasInClient, McReaderClient, MangaKakalotClient, ManganeloClient, ManganatoClient, LikemangaClient, \
+    KissMangaClient, MangatigreClient, MangaHasuClient, MangaBuddyClient, AsuraScansClient, NineMangaClient, ComickClient, Manhwa18Client
 import os
 
 from pyrogram import Client, filters
@@ -52,9 +52,11 @@ plugin_dicts: Dict[str, Dict[str, MangaClient]] = {
         "MangaHasu": MangaHasuClient(),
         "MangaBuddy": MangaBuddyClient(),
         "AsuraScans": AsuraScansClient(),
+        "NineManga": NineMangaClient(),        
+        "Comick": ComickClient(MangaClient),
+        "Likemanga": LikemangaClient(),
         "Manhwa18": Manhwa18Client(),
-        "NineManga": NineMangaClient(),
-    },
+          },
     "🇪🇸 ES": {
         "MangaDex": MangaDexClient(language=("es-la", "es")),
         "ManhuaKo": ManhuaKoClient(),
@@ -87,7 +89,7 @@ class OutputOptions(enum.IntEnum):
         return self.value | other
 
 
-disabled = ["[🇬🇧 EN] McReader", "[🇬🇧 EN] Manhuaplus"]
+disabled = ["[🇬🇧 EN] McReader", "[🇬🇧 EN] Manhuaplus", "[🇪🇸 ES] MangasIn"]
 
 plugins = dict()
 for lang, plugin_dict in plugin_dicts.items():
@@ -154,7 +156,7 @@ async def on_private_message(client: Client, message: Message):
     except pyrogram.errors.UserNotParticipant:
         await message.reply("In order to use the bot you must join it's update channel.",
                             reply_markup=InlineKeyboardMarkup(
-                                [[InlineKeyboardButton('Join!', url=f't.me/Mayhem_Bots')]]
+                                [[InlineKeyboardButton('Join!', url=f't.me/{channel}')]]
                             ))
     except pyrogram.ContinuePropagation:
         raise
@@ -172,7 +174,7 @@ async def on_start(client: Client, message: Message):
                         "How to use? Just type the name of some manga you want to keep up to date.\n"
                         "\n"
                         "For example:\n"
-                        "`Fire Force`\n"
+                        "`One Piece`\n"
                         "\n"
                         "Check /help for more information.")
     logger.info(f"User {message.from_user.id} finished the start command")
