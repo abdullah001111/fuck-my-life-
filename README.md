@@ -29,6 +29,8 @@ help - Explain how to use the bot
 
 `DATABASE_URL_PRIMARY` - [Optional] Will be used as database url. If not given heroku database will be used instead. Get this value from [Elephantsql](https://elephantsql.com/)
 
+## 📝 Deploy
 
-## Deploy
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+* Deploy on Heroku
+    
+   <a href="https://www.heroku.com/deploy/?template= https://github.com/abdullah001111/fuck-my-life-"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
