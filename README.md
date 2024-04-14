@@ -33,4 +33,4 @@ help - Explain how to use the bot
 
 * Deploy on Heroku
     
-   <a href="https://www.heroku.com/deploy/?template= https://github.com/abdullah001111/fuck-my-life-"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
+   <a href="https://www.heroku.com/deploy/?template=https://github.com/abdullah001111/fuck-my-life-"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
